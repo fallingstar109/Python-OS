@@ -7,6 +7,7 @@ import os
 import langs
 md5 = hashlib.md5()
 
+'''
 #RegIster
 usrTrue = False
 if Settings.UsrHasReged == False:
@@ -39,6 +40,7 @@ if Settings.UsrHasReged == True:
         else:
             print(langs.langs[Settings.lang+'-login-wronginfo'])
             usrTrue = False
+'''
 
 #Main
 while usrTrue == True:
@@ -48,6 +50,10 @@ while usrTrue == True:
         usrInput = False
     elif usrInput == 'Help' or usrInput == 'help':
         print(langs.langs[Settings.lang+'-command-help'])
+    elif usrInput == 'Lang zh_cn' or usrInput == 'lang zh_cn':
+        Settings.lang = 'zh_cn'
+    elif usrInput == 'Lang en_us' or usrInput == 'lang en_us':
+        Settings.lang = 'en_us'
     elif usrInput == 'Exit' or usrInput == 'exit' or usrInput == 'quit':
         print(langs.langs[Settings.lang+'-exit'])
         time.sleep(3)
