@@ -1,4 +1,5 @@
 #SetUp
+import getpass
 import Settings
 import hashlib
 import time
