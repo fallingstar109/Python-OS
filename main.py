@@ -5,65 +5,53 @@ import Settings
 import hashlib
 import time
 import os
+import langs
 md5 = hashlib.md5()
-command_help ='''\
-_____/[CommandHelp]\_____
-Help(help)——Show Help
-LogOut(logout)——LogOut
-Exit(exit,quit)——Exit OS
-......
-—————\    [End]    /—————
-'''
 
 #RegIster
 usrTrue = False
 if Settings.UsrHasReged == False:
-    print('Please RegIster First!')
+    print(langs.langs[Settings.lang+'-reg'])
     while Settings.UsrHasReged == False: 
-        usrname = input("UserName: ")
+        usrname = input(langs.langs[Settings.lang+'-reg-username'])
         usrpwd = getpass.getpass()
-        if usrname == "" or usrpwd == "":
-            print('Please Enter Username Or Password!')
+        if usrname == '' or usrpwd == '':
+            print(langs.langs[Settings.lang+'-reg-noinfo'])
         else:
-            print('RegIster Successful')
-            md5.update(usrpwd.encode(encoding="utf-8"))
+            print(langs.langs[Settings.lang+'-reg-success'])
+            md5.update(usrpwd.encode(encoding='utf-8'))
             usrpwd = md5.hexdigest()
             Settings.UsrHasReged = True
             Settings.users[usrname] = usrpwd
-        print(usrpwd)
 
 #LogIn
 if Settings.UsrHasReged == True:
-    print('Please Login First!')
+    print(langs.langs[Settings.lang+'-login'])
     while usrTrue == False:
-        usrname = input("Username: ")
+        usrname = input(langs.langs[Settings.lang+'-login-username'])
         usrpwd = getpass.getpass()
-        md5.update(usrpwd.encode(encoding="utf-8"))
+        md5.update(usrpwd.encode(encoding='utf-8'))
         usrpwd = md5.hexdigest()
-        if usrname == "" or usrpwd == "":
-            print('Please Enter Username Or Password!')
+        if usrname == '' or usrpwd == '':
+            print(langs.langs[Settings.lang+'-login-noinfo'])
         elif usrpwd == Settings.users[usrname]:
-            print('Login Successful')
+            print(langs.langs[Settings.lang+'-login-success'])
             usrTrue = True
         else:
-            print('Wrong username or password!')
+            print(langs.langs[Settings.lang+'-login-wronginfo'])
             usrTrue = False
 
 #Main
 while usrTrue == True:
-    usrInput = input(">>>")
-    if usrInput == "LogOut" or usrInput == "logout":
+    usrInput = input('>>>')
+    if usrInput == 'LogOut' or usrInput == 'logout':
+        print(langs.langs[Settings.lang+'-logout'])
         usrInput = False
-    elif usrInput == "Help" or usrInput == "help":
-        print(command_help)
-    elif usrInput == "Exit" or usrInput == "exit" or usrInput == "quit":
-        print('GoodBye!')
+    elif usrInput == 'Help' or usrInput == 'help':
+        print(langs.langs[Settings.lang+'-command-help'])
+    elif usrInput == 'Exit' or usrInput == 'exit' or usrInput == 'quit':
+        print(langs.langs[Settings.lang+'-exit'])
         time.sleep(3)
         exit()
-    elif usrInput == "wget":
-        usrInput = input("URL:")
-        functionwget.download(usrInput)
-    elif usrInput == "pom":
-        usrInput = input("[POM]Search:")
     else:
-        print('Unkown Command,Type "Help" to show Help')
+        print(langs.langs[Settings.lang+'-command-unkown'])
