@@ -1,6 +1,4 @@
 #SetUp
-import functionwget
-import getpass
 import Settings
 import hashlib
 import time
