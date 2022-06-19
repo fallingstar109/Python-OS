@@ -11,6 +11,8 @@ _____/[CommandHelp]\_____
 Help(help)——Show Help
 LogOut(logout)——LogOut
 Exit(exit,quit)——Exit OS
+Lang(lang)——Switch language
+-Usage: Lang <lang_name>
 ......
 —————\    [End]    /—————
 '''
