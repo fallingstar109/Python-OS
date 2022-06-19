@@ -6,10 +6,10 @@ import time
 import os
 import langs
 md5 = hashlib.md5()
+usrTrue = False
 
 '''
 #RegIster
-usrTrue = False
 if Settings.UsrHasReged == False:
     print(langs.langs[Settings.lang+'-reg'])
     while Settings.UsrHasReged == False: 
@@ -52,7 +52,7 @@ while usrTrue == True:
         print(langs.langs[Settings.lang+'-command-help'])
     elif usrInput == 'Lang zh_cn' or usrInput == 'lang zh_cn':
         Settings.lang = 'zh_cn'
-    elif usrInput == 'Lang en_us' or usrInput == 'lang en_us':
+    elif usrInput == 'Lang en_us' or usrInput == 'lang ':
         Settings.lang = 'en_us'
     elif usrInput == 'Exit' or usrInput == 'exit' or usrInput == 'quit':
         print(langs.langs[Settings.lang+'-exit'])
