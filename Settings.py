@@ -1,4 +1,4 @@
 UsrHasReged = False
-users = {"None" : 0}
+users = {"Admin" : 0}
 pomsearchlist = {"MoreProgram" : ""}
 lang="en_us"
