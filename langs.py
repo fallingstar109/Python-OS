@@ -12,6 +12,8 @@ langs = {
         "zh_cn-logout":"登出成功！",
         "zh_cn-command-help":"_____/[CommandHelp]\_____\nHelp(help)——展示帮助\nLogOut(logout)——登出\nLang(lang)——切换语言\nExit(exit,quit)——退出系统\n......\n—————\    [End]    /—————",
         "zh_cn-command-unkown":"未知的命令，输入{Help}查看帮助！",
+        "zh_cn-lang":"已切换语言至中文!",
+        "zh_cn-lang-list":"_____/[语言列表]\_____\n1.zh_cn 简体中文\n2.en_us English\n......",
         "zh_cn-exit":"再见吖!ヾ(￣▽￣)Bye~Bye~",
         "en_us-reg":"Please RegIster First!",
         "en_us-login":"Please Login First!",
@@ -25,5 +27,7 @@ langs = {
         "en_us-logout":"LogOut Successful!",
         "en_us-command-help":"_____/[CommandHelp]\_____\nHelp(help)——Show Help\nLogOut(logout)——LogOut\nLang(lang)——Switch Language\nExit(exit,quit)——Exit OS\n......\n—————\    [End]    /—————",
         "en_us-command-unkown":"Unkown Command,Type {Help} to show Help",
+        "en_us-lang":"Switched language to English!",
+        "en_us-lang-list":"_____/[LangList]\_____\n1.zh_cn 简体中文\n2.en_us English\n......",
         "en_us-exit":"GoodBye!ヾ(￣▽￣)Bye~Bye~",
         }

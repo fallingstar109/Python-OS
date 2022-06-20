@@ -6,7 +6,7 @@ import time
 import os
 import langs
 md5 = hashlib.md5()
-usrTrue = False
+usrTrue = True
 
 '''
 #RegIster
@@ -47,13 +47,17 @@ while usrTrue == True:
     usrInput = input('>>>')
     if usrInput == 'LogOut' or usrInput == 'logout':
         print(langs.langs[Settings.lang+'-logout'])
-        usrInput = False
+        usrTrue = False
     elif usrInput == 'Help' or usrInput == 'help':
         print(langs.langs[Settings.lang+'-command-help'])
+    elif usrInput == 'Lang' or usrInput == 'lang':
+        print(langs.langs[Settings.lang+'-lang-list'])
     elif usrInput == 'Lang zh_cn' or usrInput == 'lang zh_cn':
         Settings.lang = 'zh_cn'
-    elif usrInput == 'Lang en_us' or usrInput == 'lang ':
+        print(langs.langs[Settings.lang+'-lang'])
+    elif usrInput == 'Lang en_us' or usrInput == 'lang en_us':
         Settings.lang = 'en_us'
+        print(langs.langs[Settings.lang+'-lang'])
     elif usrInput == 'Exit' or usrInput == 'exit' or usrInput == 'quit':
         print(langs.langs[Settings.lang+'-exit'])
         time.sleep(3)
